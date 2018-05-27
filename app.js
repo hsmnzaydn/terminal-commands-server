@@ -8,7 +8,6 @@ require('dotenv').config({path:'./process.env'})
 var database=require('./db/database')
 
 
-
 var config = {
   appRoot: __dirname // required config
 };

@@ -25,35 +25,37 @@ paths:
       description: Returns commands of users
       # used as the method name of the controller
       operationId: getCommands
-      parameters:
-        - name: udid
-          in: header
-          description: Client's specific number
-          required: true
-          type: string
       responses:
         "200":
           description: Success
           schema:
-            # a pointer to a definition
-            $ref: "#/definitions/HelloWorldResponse"
-        default:
+           type: array
+           items:
+            $ref: "#/definitions/Command"
+        "500":
           description: Error
           schema:
-            $ref: "#/definitions/ErrorResponse"
+            $ref: "#/definitions/CommonResponse"
   /swagger:
     x-swagger-pipe: swagger_raw
 # complex objects have schema definitions
 definitions:
-  HelloWorldResponse:
-    required:
-      - message
+  
+  
+  
+  Command:
+   properties:
+    category:
+     type: string
+    text:
+     type: string
+    detail:
+     type: string
+     
+  
+  CommonResponse:
     properties:
-      message:
-        type: string
-  ErrorResponse:
-    required:
-      - message
-    properties:
+      code:
+       type: number
       message:
         type: string
