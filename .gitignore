@@ -28,7 +28,7 @@ build/Release
 node_modules
 
 # Environment
- process.env
+ *.env
 
 # Users Environment Variables
 .lock-wscript

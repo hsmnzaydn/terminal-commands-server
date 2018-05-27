@@ -12,3 +12,5 @@ var command=new Schema(
     }
 )
 
+module.exports=mongoose.model('command',command);
+

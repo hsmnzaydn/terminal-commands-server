@@ -1,4 +1,4 @@
-let userSchema=require('../../db/models/User')
+let userSchema=require('../../db/models/Command')
 
 
 
@@ -13,7 +13,7 @@ module.exports={getCommands}
  */
 
 function getCommands(req,res,next) {
-    
+
     
 
 
