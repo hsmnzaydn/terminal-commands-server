@@ -10,6 +10,7 @@
 <ul>
     <li>Express </li>
     <li>Swagger for node.js</li>
+    <li>Swagger UI </li>
     <li>Mongoose</li>
     <li>MongoDB</li>
 </ul>
