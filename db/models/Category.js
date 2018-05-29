@@ -6,8 +6,8 @@ var Schema=mongoose.Schema;
 var category=new Schema(
     {
         
-        title:{type:String, default: NaN}
-        
+        title:{type:String, default: NaN},
+        language:{type:String, default:"ENG"}
 
     }
 )

@@ -35,8 +35,13 @@ paths:
       tags:
        - "Commands"
       description: Returns all commands 
-      # used as the method name of the controller
       operationId: getCommands
+      parameters:
+      - in: query
+        name: language
+        description: Choose a language -> TR,ENG,FRA
+        required: true
+        type: string
       responses:
         "200":
           description: Success
@@ -58,6 +63,12 @@ paths:
       - "Category"
       description: Returns category list
       operationId: getCategories
+      parameters:
+      - in: query
+        name: language
+        description: Choose a language -> TR,ENG,FRA
+        required: true
+        type: string
       responses:
        "200":
         description: Success
@@ -100,3 +111,6 @@ definitions:
        type: number
       message:
         type: string
+        
+ 
+
