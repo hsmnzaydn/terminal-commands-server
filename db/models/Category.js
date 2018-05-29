@@ -12,5 +12,5 @@ var category=new Schema(
     }
 )
 
-module.exports=mongoose.model('Categoty',category);
+module.exports=mongoose.model('Category',category);
 
