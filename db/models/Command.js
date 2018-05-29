@@ -5,7 +5,7 @@ var Schema=mongoose.Schema;
 
 var command=new Schema(
     {
-        category:{type:String, default: "Uncategorized"},
+        category:{type:mongoose.Schema.Types.ObjectId, ref:"Category"},
         text:{type:String, default: NaN},
         detail: {type:String, default: NaN}
 

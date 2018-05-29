@@ -21,6 +21,8 @@ produces:
 tags:
 - name: "Commands"
   description: "Commands' services"
+- name: "Category"
+  description: "Category' services"  
 
   
   
@@ -32,7 +34,7 @@ paths:
     get:
       tags:
        - "Commands"
-      description: Returns commands of users
+      description: Returns all commands 
       # used as the method name of the controller
       operationId: getCommands
       responses:
@@ -46,17 +48,46 @@ paths:
           description: Error
           schema:
             $ref: "#/definitions/CommonResponse"
+    
+    
+    
+  /api/categories:
+    x-swagger-router-controller: category_service
+    get:
+      tags:
+      - "Category"
+      description: Returns category list
+      operationId: getCategories
+      responses:
+       "200":
+        description: Success
+        schema:
+         type: array
+         items:
+          $ref: "#/definitions/Category"
+       "500":
+         description: Error
+         schema:
+          $ref: "#/definitions/CommonResponse"
+          
+          
   /swagger:
     x-swagger-pipe: swagger_raw
 # complex objects have schema definitions
 definitions:
   
+  Category:
+   properties:
+    id:
+     type: string
+    name:
+     type: string
   
   
   Command:
    properties:
     category:
-     type: string
+     $ref: "#/definitions/Category"
     text:
      type: string
     detail:

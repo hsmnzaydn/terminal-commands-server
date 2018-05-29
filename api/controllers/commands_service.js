@@ -25,7 +25,6 @@ function getCommands(req,res,next) {
                     res.status(callback.code)
                     res.send(commandList)
                 })
-
         }
 
 
