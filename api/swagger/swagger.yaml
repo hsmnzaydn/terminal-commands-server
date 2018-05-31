@@ -80,7 +80,32 @@ paths:
          description: Error
          schema:
           $ref: "#/definitions/CommonResponse"
+    
+    
+    
+    post:
+      tags:
+      - "Category"
+      description: Add new category 
+      operationId: addCategory
+      parameters:
+       - in: body
+         name: Category
+         description: Category object
+         required: true
+         schema:
+          $ref: "#/definitions/Category"
+      responses:
+       "200":
+        description: OK
+        schema:
+         $ref : "#/definitions/CommonResponse"
+       "500":
+        description: Error
+        schema:
+         $ref : "#/definitions/CommonResponse"
           
+           
           
   /swagger:
     x-swagger-pipe: swagger_raw
@@ -93,6 +118,10 @@ definitions:
      type: string
     name:
      type: string
+    language:
+     enum: ["TR","FRA","ENG"]
+     type: string 
+         
   
   
   Command:
@@ -112,5 +141,7 @@ definitions:
       message:
         type: string
         
+  
+    
  
 
