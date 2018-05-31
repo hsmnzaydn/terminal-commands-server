@@ -14,7 +14,7 @@ module.exports={getCommands}
 
 function getCommands(req,res,next) {
     var language=req.swagger.params.language.value;
-    commandSchema.find(function(err,commandList){
+    commandSchema.find({language:language},function(err,commandList){
         if(err){
             createCommonResponse(ERROR_CODE,ERROR_MESSAGE,function(callback){
                 res.status(callback.code)

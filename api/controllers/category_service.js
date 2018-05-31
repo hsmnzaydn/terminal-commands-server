@@ -12,7 +12,7 @@ module.exports={getCategories,addCategory}
  */
 function getCategories(req,res,next) {
     var language=req.swagger.params.language.value;
-    categorySchema.find(function(err,categoryList){
+    categorySchema.find({language:language},function(err,categoryList){
         if(err){
             createCommonResponse(ERROR_CODE,ERROR_MESSAGE,function(callback){
                 res.status(callback.code)
