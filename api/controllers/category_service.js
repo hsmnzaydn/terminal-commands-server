@@ -1,7 +1,8 @@
 require('../../utils/global')
 let categorySchema=require('../../db/models/Category')
+    commandSchema=require('../../db/models/Command')
 
-module.exports={getCategories,addCategory}
+module.exports={getCategories,addCategory,getCommandsOfCategory}
 
 
 /**
@@ -57,4 +58,27 @@ function addCategory(req,res,next) {
             }
         })
 
+}
+
+/**
+ * 
+ * @param {Request} req 
+ * @param {Response} res 
+ * @param {next} next 
+ */
+function getCommandsOfCategory(req,res,next) {
+    var categoryId=req.swagger.params.categoryId.value
+    commandSchema.find({category:categoryId},function(err,commands){
+        if(err){
+            createCommonResponse(ERROR_CODE,ERROR_MESSAGE,function(callback){
+                res.status(callback.code)
+                res.send(callback)
+             })
+        }else{
+            createCommonResponse(SUCCESS_CODE,SUCCESS_MESSAGE,function(callback){
+                res.status(callback.code)
+                res.send(commands)
+             })
+        }
+    })
 }

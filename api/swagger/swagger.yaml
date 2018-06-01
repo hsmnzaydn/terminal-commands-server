@@ -82,28 +82,32 @@ paths:
           $ref: "#/definitions/CommonResponse"
     
     
+  /api/categories/{categoryId}/commands:
     
-    post:
+    x-swagger-router-controller: category_service
+    get:
       tags:
       - "Category"
-      description: Add new category 
-      operationId: addCategory
+      description: Returns commands of category
+      operationId: getCommandsOfCategory
       parameters:
-       - in: body
-         name: Category
-         description: Category object
-         required: true
-         schema:
-          $ref: "#/definitions/Category"
+      - in: path
+        name: categoryId
+        description: Choose a language -> TR,ENG,FRA
+        required: true
+        type: string
       responses:
        "200":
-        description: OK
+        description: Success
         schema:
-         $ref : "#/definitions/CommonResponse"
+         type: array
+         items:
+          $ref: "#/definitions/Category"
        "500":
-        description: Error
-        schema:
-         $ref : "#/definitions/CommonResponse"
+         description: Error
+         schema:
+          $ref: "#/definitions/CommonResponse"
+   
           
            
           
