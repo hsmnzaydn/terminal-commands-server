@@ -10,7 +10,6 @@ const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
 const swaggerDocument = YAML.load('./api/swagger/swagger.yaml');
 
-
 var config = {
   appRoot: __dirname // required config
 };
