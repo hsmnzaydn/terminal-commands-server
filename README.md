@@ -13,7 +13,6 @@
     <li>Swagger UI </li>
     <li>Mongoose</li>
     <li>MongoDB</li>
-    <li>Nodemon</li>
 </ul>
 
 
