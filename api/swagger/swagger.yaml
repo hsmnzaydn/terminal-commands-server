@@ -3,7 +3,7 @@ info:
   version: "0.0.1"
   title: Terminal Commands App
 # during dev, should point to your local machine
-host: localhost:8080
+host: terminalcommands.herokuapp.com
 # basePath prefixes all resource paths 
 basePath: /
 # 
