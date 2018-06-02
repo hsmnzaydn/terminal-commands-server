@@ -93,7 +93,7 @@ paths:
       parameters:
       - in: path
         name: categoryId
-        description: Choose a language -> TR,ENG,FRA
+        description: Category id
         required: true
         type: string
       responses:
