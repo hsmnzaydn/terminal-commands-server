@@ -20,6 +20,15 @@ SwaggerExpress.create(config, function(err, swaggerExpress) {
   // install middleware
   swaggerExpress.register(app);
 
+
+ 
+  app.use('/public',express.static(path.join(__dirname,'public')))
+
+  app.set('view engine','ejs')
+  app.set('views',path.join(__dirname,'/views'))
+  app.use(bodyParser.urlencoded({extended:false}))
+  app.use(bodyParser.json())
+
   var port = process.env.PORT ;
   app.listen(port);
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
