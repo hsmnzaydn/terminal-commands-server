@@ -3,7 +3,7 @@ info:
   version: "0.0.1"
   title: Terminal Commands App
 # during dev, should point to your local machine
-host: terminalcommands.herokuapp.com
+host: localhost:8080
 # basePath prefixes all resource paths 
 basePath: /
 # 
@@ -67,7 +67,7 @@ paths:
       - in: query
         name: language
         description: Choose a language -> TR,ENG,FRA
-        required: true
+        required: false
         type: string
       responses:
        "200":

@@ -13,7 +13,7 @@ module.exports={getCommands}
  */
 
 function getCommands(req,res,next) {
-    var language=req.swagger.params.language.value;
+    var language=(req.swagger.params.language.value==null ? ENG:req.swagger.params.language.value);
     commandSchema.find({language:language},function(err,commandList){
         if(err){
             createCommonResponse(ERROR_CODE,ERROR_MESSAGE,function(callback){
